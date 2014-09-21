@@ -6,9 +6,9 @@
 // Base styles
 // --------------------------------------------------
 
-.btn {
+[tb-btn] {
   display: inline-block;
-  margin-bottom: 0; // For input.btn
+  margin-bottom: 0; // For input[tb-btn]
   font-weight: @btn-font-weight;
   text-align: center;
   vertical-align: middle;
@@ -22,28 +22,28 @@
 
   &,
   &:active,
-  &.active {
+  &[tb-btn~='active'] {
     &:focus,
-    &.focus {
+    &[tb-btn~='focus'] {
       .tab-focus();
     }
   }
 
   &:hover,
   &:focus,
-  &.focus {
+  &[tb-btn~='focus'] {
     color: @btn-default-color;
     text-decoration: none;
   }
 
   &:active,
-  &.active {
+  &[tb-btn~='active'] {
     outline: 0;
     background-image: none;
     .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
   }
 
-  &.disabled,
+  &[tb-btn~='disabled'],
   &[disabled],
   fieldset[disabled] & {
     cursor: not-allowed;
@@ -57,26 +57,26 @@
 // Alternate buttons
 // --------------------------------------------------
 
-.btn-default {
+[tb-btn~='default'] {
   .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
 }
-.btn-primary {
+[tb-btn~='primary']{
   .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
 }
 // Success appears as green
-.btn-success {
+[tb-btn~='success']{
   .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
 }
 // Info appears as blue-green
-.btn-info {
+[tb-btn~='info']{
   .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
 }
 // Warning appears as orange
-.btn-warning {
+[tb-btn~='warning']{
   .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
 }
 // Danger and error appear as red
-.btn-danger {
+[tb-btn~='danger']{
   .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
 }
 
@@ -85,14 +85,14 @@
 // -------------------------
 
 // Make a button look and behave like a link
-.btn-link {
+[tb-btn~='link']{
   color: @link-color;
   font-weight: normal;
   border-radius: 0;
 
   &,
   &:active,
-  &.active,
+  &[tb-btn~='active'],
   &[disabled],
   fieldset[disabled] & {
     background-color: transparent;
@@ -124,15 +124,15 @@
 // Button Sizes
 // --------------------------------------------------
 
-.btn-lg {
+[tb-btn~='lg']{
   // line-height: ensure even-numbered height of button next to large input
   .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
 }
-.btn-sm {
+[tb-btn~='sm'] {
   // line-height: ensure proper height of button next to small input
   .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
 }
-.btn-xs {
+[tb-btn~='xs'] {
   .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
 }
 
@@ -140,13 +140,13 @@
 // Block button
 // --------------------------------------------------
 
-.btn-block {
+[tb-btn~='block'] {
   display: block;
   width: 100%;
 }
 
 // Vertically space out multiple block buttons
-.btn-block + .btn-block {
+[tb-btn~='block'] + [tb-btn~='block'] {
   margin-top: 5px;
 }
 
@@ -154,7 +154,7 @@
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-  &.btn-block {
+  &[tb-btn~='block'] {
     width: 100%;
   }
 }

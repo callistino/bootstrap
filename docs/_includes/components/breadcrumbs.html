@@ -1,27 +1,27 @@
 <div class="bs-docs-section">
-  <h1 id="breadcrumbs" class="page-header">Breadcrumbs</h1>
+  <h1 id="breadcrumbs" tb-page-header>Breadcrumbs</h1>
 
-  <p class="lead">Indicate the current page's location within a navigational hierarchy.</p>
+  <p tb-lead>Indicate the current page's location within a navigational hierarchy.</p>
   <p>Separators are automatically added in CSS through <code>:before</code> and <code>content</code>.</p>
   <div class="bs-example">
-    <ol class="breadcrumb">
-      <li class="active">Home</li>
+    <ol tb-breadcrumb>
+      <li tb-breadcrumb="active">Home</li>
     </ol>
-    <ol class="breadcrumb">
+    <ol tb-breadcrumb>
       <li><a href="#">Home</a></li>
-      <li class="active">Library</li>
+      <li tb-breadcrumb="active">Library</li>
     </ol>
-    <ol class="breadcrumb" style="margin-bottom: 5px;">
+    <ol tb-breadcrumb style="margin-bottom: 5px;">
       <li><a href="#">Home</a></li>
       <li><a href="#">Library</a></li>
-      <li class="active">Data</li>
+      <li tb-breadcrumb="active">Data</li>
     </ol>
   </div>
 {% highlight html %}
-<ol class="breadcrumb">
+<ol tb-breadcrumb>
   <li><a href="#">Home</a></li>
   <li><a href="#">Library</a></li>
-  <li class="active">Data</li>
+  <li tb-breadcrumb="active">Data</li>
 </ol>
 {% endhighlight %}
 </div>

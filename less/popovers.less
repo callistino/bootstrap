@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 
-.popover {
+[tb-popover] {
   position: absolute;
   top: 0;
   left: 0;
@@ -23,13 +23,13 @@
   white-space: normal;
 
   // Offset the popover to account for the popover arrow
-  &.top     { margin-top: -@popover-arrow-width; }
-  &.right   { margin-left: @popover-arrow-width; }
-  &.bottom  { margin-top: @popover-arrow-width; }
-  &.left    { margin-left: -@popover-arrow-width; }
+  &[tb-popover~='top']     { margin-top: -@popover-arrow-width; }
+  &[tb-popover~='right']   { margin-left: @popover-arrow-width; }
+  &[tb-popover~='bottom']  { margin-top: @popover-arrow-width; }
+  &[tb-popover~='left']    { margin-left: -@popover-arrow-width; }
 }
 
-.popover-title {
+[tb-popover-title] {
   margin: 0; // reset heading margin
   padding: 8px 14px;
   font-size: @font-size-base;
@@ -40,15 +40,15 @@
   border-radius: (@border-radius-large - 1) (@border-radius-large - 1) 0 0;
 }
 
-.popover-content {
+[tb-popover-content] {
   padding: 9px 14px;
 }
 
 // Arrows
 //
-// .arrow is outer, .arrow:after is inner
+// [tb-popover-arrow] is outer, [tb-popover-arrow]:after is inner
 
-.popover > .arrow {
+[tb-popover] > [tb-popover-arrow] {
   &,
   &:after {
     position: absolute;
@@ -59,16 +59,16 @@
     border-style: solid;
   }
 }
-.popover > .arrow {
+[tb-popover] > [tb-popover-arrow] {
   border-width: @popover-arrow-outer-width;
 }
-.popover > .arrow:after {
+[tb-popover] > [tb-popover-arrow]:after {
   border-width: @popover-arrow-width;
   content: "";
 }
 
-.popover {
-  &.top > .arrow {
+[tb-popover] {
+  &[tb-popover~='top'] > [tb-popover-arrow] {
     left: 50%;
     margin-left: -@popover-arrow-outer-width;
     border-bottom-width: 0;
@@ -83,7 +83,7 @@
       border-top-color: @popover-arrow-color;
     }
   }
-  &.right > .arrow {
+  &[tb-popover~='right'] > [tb-popover-arrow] {
     top: 50%;
     left: -@popover-arrow-outer-width;
     margin-top: -@popover-arrow-outer-width;
@@ -98,7 +98,7 @@
       border-right-color: @popover-arrow-color;
     }
   }
-  &.bottom > .arrow {
+  &[tb-popover~='bottom'] > [tb-popover-arrow] {
     left: 50%;
     margin-left: -@popover-arrow-outer-width;
     border-top-width: 0;
@@ -114,7 +114,7 @@
     }
   }
 
-  &.left > .arrow {
+  &[tb-popover~='left'] > [tb-popover-arrow] {
     top: 50%;
     right: -@popover-arrow-outer-width;
     margin-top: -@popover-arrow-outer-width;

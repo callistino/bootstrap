@@ -1,7 +1,7 @@
 <div class="bs-docs-section">
-  <h1 id="input-groups" class="page-header">Input groups</h1>
+  <h1 id="input-groups" tb-page-header>Input groups</h1>
 
-  <p class="lead">Extend form controls by adding text or buttons before, after, or on both sides of any text-based input. Use <code>.input-group</code> with an <code>.input-group-addon</code> to prepend or append elements to a single <code>.form-control</code>.</p>
+  <p tb-lead>Extend form controls by adding text or buttons before, after, or on both sides of any text-based input. Use <code>.input-group</code> with an <code>.input-group-addon</code> to prepend or append elements to a single <code>.form-control</code>.</p>
 
   <div class="bs-callout bs-callout-danger">
     <h4>Cross-browser compatibility</h4>
@@ -19,75 +19,75 @@
 
   <h2 id="input-groups-basic">Basic example</h2>
   <p>Place one add-on or button on either side of an input. You may also place one on both sides of an input.</p>
-  <p><strong class="text-danger">We do not support multiple add-ons on a single side.</strong></p>
-  <p><strong class="text-danger">We do not support multiple form-controls in a single input group.</strong></p>
+  <p><strong tb-text="danger">We do not support multiple add-ons on a single side.</strong></p>
+  <p><strong tb-text="danger">We do not support multiple form-controls in a single input group.</strong></p>
   <form class="bs-example bs-example-form" role="form">
-    <div class="input-group">
-      <span class="input-group-addon">@</span>
-      <input type="text" class="form-control" placeholder="Username">
+    <div tb-input-group>
+      <span tb-input-group="addon">@</span>
+      <input type="text" tb-form-control placeholder="Username">
     </div>
     <br>
-    <div class="input-group">
-      <input type="text" class="form-control">
-      <span class="input-group-addon">.00</span>
+    <div tb-input-group>
+      <input type="text" tb-form-control>
+      <span tb-input-group="addon">.00</span>
     </div>
     <br>
-    <div class="input-group">
-      <span class="input-group-addon">$</span>
-      <input type="text" class="form-control">
-      <span class="input-group-addon">.00</span>
+    <div tb-input-group>
+      <span tb-input-group="addon">$</span>
+      <input type="text" tb-form-control>
+      <span tb-input-group="addon">.00</span>
     </div>
   </form>
 {% highlight html %}
-<div class="input-group">
-  <span class="input-group-addon">@</span>
-  <input type="text" class="form-control" placeholder="Username">
+<div tb-input-group>
+  <span tb-input-group="addon">@</span>
+  <input type="text" tb-form-control placeholder="Username">
 </div>
 
-<div class="input-group">
-  <input type="text" class="form-control">
-  <span class="input-group-addon">.00</span>
+<div tb-input-group>
+  <input type="text" tb-form-control>
+  <span tb-input-group="addon">.00</span>
 </div>
 
-<div class="input-group">
-  <span class="input-group-addon">$</span>
-  <input type="text" class="form-control">
-  <span class="input-group-addon">.00</span>
+<div tb-input-group>
+  <span tb-input-group="addon">$</span>
+  <input type="text" tb-form-control>
+  <span tb-input-group="addon">.00</span>
 </div>
 {% endhighlight %}
 
   <h2 id="input-groups-sizing">Sizing</h2>
   <p>Add the relative form sizing classes to the <code>.input-group</code> itself and contents within will automatically resize—no need for repeating the form control size classes on each element.</p>
   <form class="bs-example bs-example-form" role="form">
-    <div class="input-group input-group-lg">
-      <span class="input-group-addon">@</span>
-      <input type="text" class="form-control" placeholder="Username">
+    <div tb-input-group="lg">
+      <span tb-input-group="addon">@</span>
+      <input type="text" tb-form-control placeholder="Username">
     </div>
     <br>
-    <div class="input-group">
-      <span class="input-group-addon">@</span>
-      <input type="text" class="form-control" placeholder="Username">
+    <div tb-input-group>
+      <span tb-input-group="addon">@</span>
+      <input type="text" tb-form-control placeholder="Username">
     </div>
     <br>
-    <div class="input-group input-group-sm">
-      <span class="input-group-addon">@</span>
-      <input type="text" class="form-control" placeholder="Username">
+    <div tb-input-group="sm">
+      <span tb-input-group="addon">@</span>
+      <input type="text" tb-form-control placeholder="Username">
     </div>
   </form>
 {% highlight html %}
-<div class="input-group input-group-lg">
-  <span class="input-group-addon">@</span>
-  <input type="text" class="form-control" placeholder="Username">
+<div tb-input-group="lg">
+  <span tb-input-group="addon">@</span>
+  <input type="text" tb-form-control placeholder="Username">
 </div>
 
-<div class="input-group">
-  <span class="input-group-addon">@</span>
-  <input type="text" class="form-control" placeholder="Username">
+<div tb-input-group>
+  <span tb-input-group="addon">@</span>
+  <input type="text" tb-form-control placeholder="Username">
 </div>
 
-<div class="input-group input-group-sm">
-  <span class="input-group-addon">@</span>
-  <input type="text" class="form-control" placeholder="Username">
+<div tb-input-group="sm">
+  <span tb-input-group="addon">@</span>
+  <input type="text" tb-form-control placeholder="Username">
 </div>
 {% endhighlight %}
 
@@ -95,41 +95,41 @@
   <h2 id="input-groups-checkboxes-radios">Checkboxes and radio addons</h2>
   <p>Place any checkbox or radio option within an input group's addon instead of text.</p>
   <form class="bs-example bs-example-form">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="input-group">
-          <span class="input-group-addon">
+    <div tb-row>
+      <div tb-col="6">
+        <div tb-input-group>
+          <span tb-input-group="addon">
             <input type="checkbox">
           </span>
-          <input type="text" class="form-control">
+          <input type="text" tb-form-control>
         </div><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
-      <div class="col-lg-6">
-        <div class="input-group">
-          <span class="input-group-addon">
+      <div tb-col="6">
+        <div tb-input-group>
+          <span tb-input-group="addon">
             <input type="radio">
           </span>
-          <input type="text" class="form-control">
+          <input type="text" tb-form-control>
         </div><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
   </form>
 {% highlight html %}
-<div class="row">
-  <div class="col-lg-6">
-    <div class="input-group">
-      <span class="input-group-addon">
+<div tb-row>
+  <div tb-col="6">
+    <div tb-input-group>
+      <span tb-input-group="addon">
         <input type="checkbox">
       </span>
-      <input type="text" class="form-control">
+      <input type="text" tb-form-control>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
-  <div class="col-lg-6">
-    <div class="input-group">
-      <span class="input-group-addon">
+  <div tb-col="6">
+    <div tb-input-group>
+      <span tb-input-group="addon">
         <input type="radio">
       </span>
-      <input type="text" class="form-control">
+      <input type="text" tb-form-control>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
@@ -139,40 +139,40 @@
   <h2 id="input-groups-buttons">Button addons</h2>
   <p>Buttons in input groups are a bit different and require one extra level of nesting. Instead of <code>.input-group-addon</code>, you'll need to use <code>.input-group-btn</code> to wrap the buttons. This is required due to default browser styles that cannot be overridden.</p>
   <form class="bs-example bs-example-form">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="input-group">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Go!</button>
+    <div tb-row>
+      <div tb-col="6">
+        <div tb-input-group>
+          <span tb-input-group-btn>
+            <button tb-btn="default" type="button">Go!</button>
           </span>
-          <input type="text" class="form-control">
+          <input type="text" tb-form-control>
         </div><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
-      <div class="col-lg-6">
-        <div class="input-group">
-          <input type="text" class="form-control">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Go!</button>
+      <div tb-col="6">
+        <div tb-input-group>
+          <input type="text" tb-form-control>
+          <span tb-input-group-btn>
+            <button tb-btn="default" type="button">Go!</button>
           </span>
         </div><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
   </form>
 {% highlight html %}
-<div class="row">
-  <div class="col-lg-6">
-    <div class="input-group">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
+<div tb-row>
+  <div tb-col="6">
+    <div tb-input-group>
+      <span tb-input-group-btn>
+        <button tb-btn="default" type="button">Go!</button>
       </span>
-      <input type="text" class="form-control">
+      <input type="text" tb-form-control>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
-  <div class="col-lg-6">
-    <div class="input-group">
-      <input type="text" class="form-control">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
+  <div tb-col="6">
+    <div tb-input-group>
+      <input type="text" tb-form-control>
+      <span tb-input-group-btn>
+        <button tb-btn="default" type="button">Go!</button>
       </span>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
@@ -182,32 +182,32 @@
   <h2 id="input-groups-buttons-dropdowns">Buttons with dropdowns</h2>
   <p></p>
   <form class="bs-example bs-example-form" role="form">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="input-group">
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu">
+    <div tb-row>
+      <div tb-col="6">
+        <div tb-input-group>
+          <div tb-input-group-btn>
+            <button type="button" tb-btn="default" tb-dropdown="toggle" data-toggle="dropdown">Action <span tb-caret></span></button>
+            <ul tb-dropdown-menu role="menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
               <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
+              <li tb-divider></li>
               <li><a href="#">Separated link</a></li>
             </ul>
           </div><!-- /btn-group -->
-          <input type="text" class="form-control">
+          <input type="text" tb-form-control>
         </div><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
-      <div class="col-lg-6">
-        <div class="input-group">
-          <input type="text" class="form-control">
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+      <div tb-col="6">
+        <div tb-input-group>
+          <input type="text" tb-form-control>
+          <div tb-input-group-btn>
+            <button type="button" tb-btn="default" tb-dropdown="toggle" data-toggle="dropdown">Action <span tb-caret></span></button>
+            <ul tb-dropdown-menu="right" role="menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
               <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
+              <li tb-divider></li>
               <li><a href="#">Separated link</a></li>
             </ul>
           </div><!-- /btn-group -->
@@ -216,32 +216,32 @@
     </div><!-- /.row -->
   </form>
 {% highlight html %}
-<div class="row">
-  <div class="col-lg-6">
-    <div class="input-group">
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu">
+<div tb-row>
+  <div tb-col="6">
+    <div tb-input-group>
+      <div tb-input-group-btn>
+        <button type="button" tb-btn="default" tb-dropdown="toggle" data-toggle="dropdown">Action <span tb-caret></span></button>
+        <ul tb-dropdown-menu role="menu">
           <li><a href="#">Action</a></li>
           <li><a href="#">Another action</a></li>
           <li><a href="#">Something else here</a></li>
-          <li class="divider"></li>
+          <li tb-divider></li>
           <li><a href="#">Separated link</a></li>
         </ul>
       </div><!-- /btn-group -->
-      <input type="text" class="form-control">
+      <input type="text" tb-form-control>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
-  <div class="col-lg-6">
-    <div class="input-group">
-      <input type="text" class="form-control">
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+  <div tb-col="6">
+    <div tb-input-group>
+      <input type="text" tb-form-control>
+      <div tb-input-group-btn>
+        <button type="button" tb-btn="default" tb-dropdown="toggle" data-toggle="dropdown">Action <span tb-caret></span></button>
+        <ul tb-dropdown-menu="right" role="menu">
           <li><a href="#">Action</a></li>
           <li><a href="#">Another action</a></li>
           <li><a href="#">Something else here</a></li>
-          <li class="divider"></li>
+          <li tb-divider></li>
           <li><a href="#">Separated link</a></li>
         </ul>
       </div><!-- /btn-group -->
@@ -252,40 +252,40 @@
 
   <h2 id="input-groups-buttons-segmented">Segmented buttons</h2>
   <form class="bs-example bs-example-form" role="form">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="input-group">
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-default" tabindex="-1">Action</button>
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
-              <span class="caret"></span>
-              <span class="sr-only">Toggle Dropdown</span>
+    <div tb-row>
+      <div tb-col="6">
+        <div tb-input-group>
+          <div tb-input-group-btn>
+            <button type="button" tb-btn="default" tabindex="-1">Action</button>
+            <button type="button" tb-btn="default" tb-dropdown="toggle" data-toggle="dropdown" tabindex="-1">
+              <span tb-caret></span>
+              <span tb-sr-only>Toggle Dropdown</span>
             </button>
-            <ul class="dropdown-menu" role="menu">
+            <ul tb-dropdown-menu role="menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
               <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
+              <li tb-divider></li>
               <li><a href="#">Separated link</a></li>
             </ul>
           </div>
-          <input type="text" class="form-control">
+          <input type="text" tb-form-control>
         </div><!-- /.input-group -->
       </div><!-- /.col-lg-6 -->
-      <div class="col-lg-6">
-        <div class="input-group">
-          <input type="text" class="form-control">
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-default" tabindex="-1">Action</button>
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
-              <span class="caret"></span>
-              <span class="sr-only">Toggle Dropdown</span>
+      <div tb-col="6">
+        <div tb-input-group>
+          <input type="text" tb-form-control>
+          <div tb-input-group-btn>
+            <button type="button" tb-btn="default" tabindex="-1">Action</button>
+            <button type="button" tb-btn="default" tb-dropdown="toggle" data-toggle="dropdown" tabindex="-1">
+              <span tb-caret></span>
+              <span tb-sr-only>Toggle Dropdown</span>
             </button>
-            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <ul tb-dropdown-menu="right" role="menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
               <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
+              <li tb-divider></li>
               <li><a href="#">Separated link</a></li>
             </ul>
           </div>
@@ -294,16 +294,16 @@
     </div><!-- /.row -->
   </form>
 {% highlight html %}
-<div class="input-group">
-  <div class="input-group-btn">
+<div tb-input-group>
+  <div tb-input-group-btn>
     <!-- Button and dropdown menu -->
   </div>
-  <input type="text" class="form-control">
+  <input type="text" tb-form-control>
 </div>
 
-<div class="input-group">
-  <input type="text" class="form-control">
-  <div class="input-group-btn">
+<div tb-input-group>
+  <input type="text" tb-form-control>
+  <div tb-input-group-btn>
     <!-- Button and dropdown menu -->
   </div>
 </div>

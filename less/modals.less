@@ -2,18 +2,18 @@
 // Modals
 // --------------------------------------------------
 
-// .modal-open      - body class for killing the scroll
-// .modal           - container to scroll within
-// .modal-dialog    - positioning shell for the actual modal
-// .modal-content   - actual modal w/ bg and corners and shit
+// [tb-modal~='open']      - body class for killing the scroll
+// [tb-modal]           - container to scroll within
+// [tb-modal~='dialog']    - positioning shell for the actual modal
+// [tb-modal-content]   - actual modal w/ bg and corners and shit
 
 // Kill the scroll on the body
-.modal-open {
+[tb-modal~='open'] {
   overflow: hidden;
 }
 
 // Container that the modal scrolls within
-.modal {
+[tb-modal] {
   display: none;
   overflow: hidden;
   position: fixed;
@@ -29,26 +29,26 @@
   outline: 0;
 
   // When fading in the modal, animate it to slide down
-  &.fade .modal-dialog {
+  &[tb-modal~='fade'] [tb-modal~='dialog'] {
     .translate3d(0, -25%, 0);
     .transition-transform(~"0.3s ease-out");
   }
-  &.in .modal-dialog { .translate3d(0, 0, 0) }
+  &[tb-modal~='in'] [tb-modal~='dialog'] { .translate3d(0, 0, 0) }
 }
-.modal-open .modal {
+[tb-modal~='open'] [tb-modal] {
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 // Shell div to position the modal with bottom padding
-.modal-dialog {
+[tb-modal~='dialog'] {
   position: relative;
   width: auto;
   margin: 10px;
 }
 
 // Actual modal
-.modal-content {
+[tb-modal-content] {
   position: relative;
   background-color: @modal-content-bg;
   border: 1px solid @modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
@@ -61,7 +61,7 @@
 }
 
 // Modal background
-.modal-backdrop {
+[tb-modal-backdrop] {
   position: fixed;
   top: 0;
   right: 0;
@@ -70,59 +70,59 @@
   z-index: @zindex-modal-background;
   background-color: @modal-backdrop-bg;
   // Fade for backdrop
-  &.fade { .opacity(0); }
-  &.in { .opacity(@modal-backdrop-opacity); }
+  &[tb-modal-backdrop~='fade'] { .opacity(0); }
+  &[tb-modal-backdrop~='in'] { .opacity(@modal-backdrop-opacity); }
 }
 
 // Modal header
 // Top section of the modal w/ title and dismiss
-.modal-header {
+[tb-modal-header] {
   padding: @modal-title-padding;
   border-bottom: 1px solid @modal-header-border-color;
   min-height: (@modal-title-padding + @modal-title-line-height);
 }
 // Close icon
-.modal-header .close {
+[tb-modal-header] [tb-modal-close] {
   margin-top: -2px;
 }
 
 // Title text within header
-.modal-title {
+[tb-modal-title] {
   margin: 0;
   line-height: @modal-title-line-height;
 }
 
 // Modal body
-// Where all modal content resides (sibling of .modal-header and .modal-footer)
-.modal-body {
+// Where all modal content resides (sibling of [tb-modal-header] and [tb-modal-footer])
+[tb-modal-body] {
   position: relative;
   padding: @modal-inner-padding;
 }
 
 // Footer (for actions)
-.modal-footer {
+[tb-modal-footer] {
   padding: @modal-inner-padding;
   text-align: right; // right align buttons
   border-top: 1px solid @modal-footer-border-color;
-  &:extend(.clearfix all); // clear it in case folks use .pull-* classes on buttons
+  &:extend([tb-clearfix] all); // clear it in case folks use .pull-* classes on buttons
 
   // Properly space out buttons
-  .btn + .btn {
+  [tb-btn] + [tb-btn] {
     margin-left: 5px;
     margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
   }
   // but override that for button groups
-  .btn-group .btn + .btn {
+  [tb-btn-group] [tb-btn] + [tb-btn] {
     margin-left: -1px;
   }
   // and override it for block buttons as well
-  .btn-block + .btn-block {
+  [tb-btn~='block'] + [tb-btn~='block'] {
     margin-left: 0;
   }
 }
 
 // Measure scrollbar width for padding body during modal show/hide
-.modal-scrollbar-measure {
+[tb-modal-scrollbar~='measure'] {
   position: absolute;
   top: -9999px;
   width: 50px;
@@ -133,18 +133,18 @@
 // Scale up the modal
 @media (min-width: @screen-sm-min) {
   // Automatically set modal's width for larger viewports
-  .modal-dialog {
+  [tb-modal~='dialog'] {
     width: @modal-md;
     margin: 30px auto;
   }
-  .modal-content {
+  [tb-modal-content] {
     .box-shadow(0 5px 15px rgba(0,0,0,.5));
   }
 
   // Modal sizes
-  .modal-sm { width: @modal-sm; }
+  [tb-modal~='sm'] { width: @modal-sm; }
 }
 
 @media (min-width: @screen-md-min) {
-  .modal-lg { width: @modal-lg; }
+  [tb-modal~='lg'] { width: @modal-lg; }
 }

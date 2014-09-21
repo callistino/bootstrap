@@ -6,16 +6,16 @@
 // Floats
 // -------------------------
 
-.clearfix {
+[tb-clearfix] {
   .clearfix();
 }
-.center-block {
+[tb-center-block] {
   .center-block();
 }
-.pull-right {
+[tb-pull~='right'] {
   float: right !important;
 }
-.pull-left {
+[tb-pull~='left'] {
   float: left !important;
 }
 
@@ -23,17 +23,17 @@
 // Toggling content
 // -------------------------
 
-// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
-.hide {
+// Note: Deprecated [tb-hide] in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+[tb-hide] {
   display: none !important;
 }
-.show {
+[tb-show] {
   display: block !important;
 }
-.invisible {
+[tb-invisible] {
   visibility: hidden;
 }
-.text-hide {
+[tb-text~='hide'] {
   .text-hide();
 }
 
@@ -42,7 +42,7 @@
 //
 // Credit: HTML5 Boilerplate
 
-.hidden {
+[tb-hidden] {
   display: none !important;
   visibility: hidden !important;
 }
@@ -51,6 +51,6 @@
 // For Affix plugin
 // -------------------------
 
-.affix {
+[tb-affix] {
   position: fixed;
 }

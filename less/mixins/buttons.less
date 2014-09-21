@@ -12,32 +12,32 @@
   &:focus,
   &.focus,
   &:active,
-  &.active,
-  .open > .dropdown-toggle& {
+  &[tb-btn~='active'],
+  [tb-btn~='open'] > [tb-dropdown~='toggle']& {
     color: @color;
     background-color: darken(@background, 10%);
         border-color: darken(@border, 12%);
   }
   &:active,
-  &.active,
-  .open > .dropdown-toggle& {
+  &[tb-btn~='active'],
+  [tb-btn~='open'] > [tb-dropdown~='toggle']& {
     background-image: none;
   }
-  &.disabled,
+  &[tb-btn~='disabled'],
   &[disabled],
   fieldset[disabled] & {
     &,
     &:hover,
     &:focus,
-    &.focus,
+    &[tb-btn~='focus'],
     &:active,
-    &.active {
+    &[tb-btn~='active'] {
       background-color: @background;
           border-color: @border;
     }
   }
 
-  .badge {
+  [tb-badge] {
     color: @background;
     background-color: @color;
   }

@@ -6,11 +6,11 @@
 // Base class
 // --------------------------------------------------
 
-.nav {
+[tb-nav] {
   margin-bottom: 0;
   padding-left: 0; // Override default ul/ol
   list-style: none;
-  &:extend(.clearfix all);
+  &:extend([tb-clearfix] all);
 
   > li {
     position: relative;
@@ -28,7 +28,7 @@
     }
 
     // Disabled state sets text to gray and nukes hover/tab effects
-    &.disabled > a {
+    &[tb-nav~='disabled'] > a {
       color: @nav-disabled-link-color;
 
       &:hover,
@@ -42,7 +42,7 @@
   }
 
   // Open dropdowns
-  .open > a {
+  [tb-nav~='open'] > a {
     &,
     &:hover,
     &:focus {
@@ -53,10 +53,10 @@
 
   // Nav dividers (deprecated with v3.0.1)
   //
-  // This should have been removed in v3 with the dropping of `.nav-list`, but
+  // This should have been removed in v3 with the dropping of `[tb-nav]-list`, but
   // we missed it. We don't currently support this anywhere, but in the interest
   // of maintaining backward compatibility in case you use it, it's deprecated.
-  .nav-divider {
+  [tb-nav-divider] {
     .nav-divider();
   }
 
@@ -73,7 +73,7 @@
 // -------------------------
 
 // Give the tabs something to sit on
-.nav-tabs {
+[tb-nav~='tabs'] {
   border-bottom: 1px solid @nav-tabs-border-color;
   > li {
     float: left;
@@ -92,7 +92,7 @@
     }
 
     // Active state, and its :hover to override normal :hover
-    &.active > a {
+    &[tb-nav~='active'] > a {
       &,
       &:hover,
       &:focus {
@@ -105,7 +105,7 @@
     }
   }
   // pulling this in mainly for less shorthand
-  &.nav-justified {
+  &[tb-nav~='justified'] {
     .nav-justified();
     .nav-tabs-justified();
   }
@@ -114,7 +114,7 @@
 
 // Pills
 // -------------------------
-.nav-pills {
+[tb-nav~='pills'] {
   > li {
     float: left;
 
@@ -127,7 +127,7 @@
     }
 
     // Active state
-    &.active > a {
+    &[tb-nav~='active'] > a {
       &,
       &:hover,
       &:focus {
@@ -140,7 +140,7 @@
 
 
 // Stacked pills
-.nav-stacked {
+[tb-nav~='stacked'] {
   > li {
     float: none;
     + li {
@@ -157,7 +157,7 @@
 // Justified nav links
 // -------------------------
 
-.nav-justified {
+[tb-nav~='justified'] {
   width: 100%;
 
   > li {
@@ -168,7 +168,7 @@
     }
   }
 
-  > .dropdown .dropdown-menu {
+  > [tb-dropdown] [tb-dropdown-menu] {
     top: auto;
     left: auto;
   }
@@ -186,19 +186,19 @@
 
 // Move borders to anchors instead of bottom of list
 //
-// Mixin for adding on top the shared `.nav-justified` styles for our tabs
-.nav-tabs-justified {
+// Mixin for adding on top the shared `[tb-nav~='justified']` styles for our tabs
+[tb-nav~='tabs'][tb-nav~='justified'] {
   border-bottom: 0;
 
   > li > a {
-    // Override margin from .nav-tabs
+    // Override margin from [tb-nav~='tabs']
     margin-right: 0;
     border-radius: @border-radius-base;
   }
 
-  > .active > a,
-  > .active > a:hover,
-  > .active > a:focus {
+  > [tb-nav~='active'] > a,
+  > [tb-nav~='active'] > a:hover,
+  > [tb-nav~='active'] > a:focus {
     border: 1px solid @nav-tabs-justified-link-border-color;
   }
 
@@ -207,9 +207,9 @@
       border-bottom: 1px solid @nav-tabs-justified-link-border-color;
       border-radius: @border-radius-base @border-radius-base 0 0;
     }
-    > .active > a,
-    > .active > a:hover,
-    > .active > a:focus {
+    > [tb-nav~='active'] > a,
+    > [tb-nav~='active'] > a:hover,
+    > [tb-nav~='active'] > a:focus {
       border-bottom-color: @nav-tabs-justified-active-link-border-color;
     }
   }
@@ -219,12 +219,12 @@
 // Tabbable tabs
 // -------------------------
 
-// Hide tabbable panes to start, show them when `.active`
-.tab-content {
-  > .tab-pane {
+// Hide tabbable panes to start, show them when `[tb-nav~='active']`
+[tb-tab-content] {
+  > [tb-tab-pane] {
     display: none;
   }
-  > .active {
+  > [tb-nav~='active'] {
     display: block;
   }
 }
@@ -234,7 +234,7 @@
 // -------------------------
 
 // Specific dropdowns
-.nav-tabs .dropdown-menu {
+[tb-nav~='tabs'] [tb-dropdown-menu] {
   // make dropdown border overlap tab border
   margin-top: -1px;
   // Remove the top rounded corners here since there is a hard edge above the menu

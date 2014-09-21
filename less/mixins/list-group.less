@@ -1,14 +1,14 @@
 // List Groups
 
 .list-group-item-variant(@state; @background; @color) {
-  .list-group-item-@{state} {
+  [tb-list-group-item~='@{state}'] {
     color: @color;
     background-color: @background;
 
     a& {
       color: @color;
 
-      .list-group-item-heading {
+      [tb-list-group-item-heading] {
         color: inherit;
       }
 
@@ -17,9 +17,9 @@
         color: @color;
         background-color: darken(@background, 5%);
       }
-      &.active,
-      &.active:hover,
-      &.active:focus {
+      &[tb-list-group-item-heading~='active'],
+      &[tb-list-group-item-heading~='active']:hover,
+      &[tb-list-group-item-heading~='active']:focus {
         color: #fff;
         background-color: @color;
         border-color: @color;

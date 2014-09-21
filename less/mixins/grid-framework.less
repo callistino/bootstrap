@@ -6,11 +6,11 @@
 .make-grid-columns() {
   // Common styles for all sizes of grid columns, widths 1-12
   .col(@index) when (@index = 1) { // initial
-    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    @item: ~"[tb-col~='xs'][tb-col~='@{index}'], [tb-col~='sm'][tb-col~='@{index}'], [tb-col~='md'][tb-col~='@{index}'], [tb-col~='lg'][tb-col~='@{index}']";
     .col((@index + 1), @item);
   }
   .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
-    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    @item: ~"[tb-col~='xs'][tb-col~='@{index}'], [tb-col~='sm'][tb-col~='@{index}'], [tb-col~='md'][tb-col~='@{index}'], [tb-col~='lg'][tb-col~='@{index}']";
     .col((@index + 1), ~"@{list}, @{item}");
   }
   .col(@index, @list) when (@index > @grid-columns) { // terminal
@@ -28,11 +28,11 @@
 
 .float-grid-columns(@class) {
   .col(@index) when (@index = 1) { // initial
-    @item: ~".col-@{class}-@{index}";
+    @item: ~"[tb-col~='@{class}'][tb-col~='@{index}']";
     .col((@index + 1), @item);
   }
   .col(@index, @list) when (@index =< @grid-columns) { // general
-    @item: ~".col-@{class}-@{index}";
+    @item: ~"[tb-col~='@{class}'][tb-col~='@{index}']";
     .col((@index + 1), ~"@{list}, @{item}");
   }
   .col(@index, @list) when (@index > @grid-columns) { // terminal
@@ -44,32 +44,32 @@
 }
 
 .calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
-  .col-@{class}-@{index} {
+  [tb-col~='@{class}'][tb-col~='@{index}'] {
     width: percentage((@index / @grid-columns));
   }
 }
 .calc-grid-column(@index, @class, @type) when (@type = push) and (@index > 0) {
-  .col-@{class}-push-@{index} {
+  [tb-col~='@{class}'][tb-col~='@{index}'] {
     left: percentage((@index / @grid-columns));
   }
 }
 .calc-grid-column(@index, @class, @type) when (@type = push) and (@index = 0) {
-  .col-@{class}-push-0 {
+  [tb-col~='@{class}'][tb-col~='push'][tb-col~='0'] {
     left: auto;
   }
 }
 .calc-grid-column(@index, @class, @type) when (@type = pull) and (@index > 0) {
-  .col-@{class}-pull-@{index} {
+  [tb-col~='@{class}'][tb-col~='pull'][tb-col~='@{index}'] {
     right: percentage((@index / @grid-columns));
   }
 }
 .calc-grid-column(@index, @class, @type) when (@type = pull) and (@index = 0) {
-  .col-@{class}-pull-0 {
+  [tb-col~='@{class}'][tb-col~='pull'][tb-col~='0'] {
     right: auto;
   }
 }
 .calc-grid-column(@index, @class, @type) when (@type = offset) {
-  .col-@{class}-offset-@{index} {
+  [tb-col~='@{class}'][tb-col~='offset'][tb-col~='@{index}'] {
     margin-left: percentage((@index / @grid-columns));
   }
 }

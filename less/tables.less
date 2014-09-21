@@ -19,7 +19,7 @@ th {
 
 // Baseline styles
 
-.table {
+[tb-table] {
   width: 100%;
   max-width: 100%;
   margin-bottom: @line-height-computed;
@@ -59,7 +59,7 @@ th {
   }
 
   // Nesting
-  .table {
+  [tb-table] {
     background-color: @body-bg;
   }
 }
@@ -67,7 +67,7 @@ th {
 
 // Condensed table w/ half padding
 
-.table-condensed {
+[tb-table~='condensed'] {
   > thead,
   > tbody,
   > tfoot {
@@ -85,7 +85,7 @@ th {
 //
 // Add borders all around the table and between all the columns.
 
-.table-bordered {
+[tb-table~='bordered'] {
   border: 1px solid @table-border-color;
   > thead,
   > tbody,
@@ -110,7 +110,7 @@ th {
 //
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 
-.table-striped {
+[tb-table~='striped'] {
   > tbody > tr:nth-child(odd) {
     background-color: @table-bg-accent;
   }
@@ -121,7 +121,7 @@ th {
 //
 // Placed here since it has to come after the potential zebra striping
 
-.table-hover {
+[tb-table~='hover'] {
   > tbody > tr:hover {
     background-color: @table-bg-hover;
   }
@@ -151,7 +151,7 @@ table {
 
 // Table backgrounds
 //
-// Exact selectors below required to override `.table-striped` and prevent
+// Exact selectors below required to override `[tb-table~='striped']` and prevent
 // inheritance to nested tables.
 
 // Generate the contextual variants
@@ -164,11 +164,11 @@ table {
 
 // Responsive tables
 //
-// Wrap your tables in `.table-responsive` and we'll make them mobile friendly
+// Wrap your tables in `[tb-table~='responsive']` and we'll make them mobile friendly
 // by enabling horizontal scrolling. Only applies <768px. Everything above that
 // will display normally.
 
-.table-responsive {
+[tb-table~='responsive'] {
   overflow-x: auto;
 
   @media screen and (max-width: @screen-xs-max) {
@@ -179,7 +179,7 @@ table {
     border: 1px solid @table-border-color;
 
     // Tighten up spacing
-    > .table {
+    > [tb-table] {
       margin-bottom: 0;
 
       // Ensure the content doesn't wrap
@@ -196,7 +196,7 @@ table {
     }
 
     // Special overrides for the bordered tables
-    > .table-bordered {
+    > [tb-table~='bordered'] {
       border: 0;
 
       // Nuke the appropriate borders so that the parent can handle them

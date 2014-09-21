@@ -1,5 +1,5 @@
 <div class="bs-docs-section">
-  <h1 id="glyphicons" class="page-header">Glyphicons</h1>
+  <h1 id="glyphicons" tb-page-header>Glyphicons</h1>
 
   <h2 id="glyphicons-glyphs">Available glyphs</h2>
   <p>Includes 200 glyphs in font format from the Glyphicon Halflings set. <a href="http://glyphicons.com/">Glyphicons</a> Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that you include a link back to <a href="http://glyphicons.com/">Glyphicons</a> whenever possible.</p>
@@ -43,23 +43,23 @@
   <h2 id="glyphicons-examples">Examples</h2>
   <p>Use them in buttons, button groups for a toolbar, navigation, or prepended form inputs.</p>
   <div class="bs-example">
-    <div class="btn-toolbar" role="toolbar">
-      <div class="btn-group">
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-left"></span> <span class="sr-only">Left Align</span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-center"></span> <span class="sr-only">Center Align</span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-right"></span> <span class="sr-only">Right Align</span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-justify"></span> <span class="sr-only">Justify</span></button>
+    <div tb-btn-toolbar role="toolbar">
+      <div tb-btn-group>
+        <button type="button" tb-btn="default"><span class="glyphicon glyphicon-align-left"></span> <span tb-sr-only>Left Align</span></button>
+        <button type="button" tb-btn="default"><span class="glyphicon glyphicon-align-center"></span> <span tb-sr-only>Center Align</span></button>
+        <button type="button" tb-btn="default"><span class="glyphicon glyphicon-align-right"></span> <span tb-sr-only>Right Align</span></button>
+        <button type="button" tb-btn="default"><span class="glyphicon glyphicon-align-justify"></span> <span tb-sr-only>Justify</span></button>
       </div>
     </div>
-    <div class="btn-toolbar" role="toolbar">
-      <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star"></span> Star</button>
-      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-star"></span> Star</button>
-      <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-star"></span> Star</button>
-      <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-star"></span> Star</button>
+    <div tb-btn-toolbar role="toolbar">
+      <button type="button" tb-btn="default lg"><span class="glyphicon glyphicon-star"></span> Star</button>
+      <button type="button" tb-btn="default"><span class="glyphicon glyphicon-star"></span> Star</button>
+      <button type="button" tb-btn="default sm"><span class="glyphicon glyphicon-star"></span> Star</button>
+      <button type="button" tb-btn="default xs"><span class="glyphicon glyphicon-star"></span> Star</button>
     </div>
   </div>
 {% highlight html %}
-<button type="button" class="btn btn-default btn-lg">
+<button type="button" tb-btn="default lg">
   <span class="glyphicon glyphicon-star"></span> Star
 </button>
 {% endhighlight %}

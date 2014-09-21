@@ -69,29 +69,29 @@
   }
 
   // Bootstrap components
-  .navbar {
+  [tb-navbar] {
     display: none;
   }
-  .table {
+  [tb-table] {
     td,
     th {
       background-color: #fff !important;
     }
   }
-  .btn,
-  .dropup > .btn {
-    > .caret {
+  [tb-btn],
+  [tb-dropup] > [tb-btn] {
+    > [tb-caret] {
       border-top-color: #000 !important;
     }
   }
-  .label {
+  [tb-label] {
     border: 1px solid #000;
   }
 
-  .table {
+  [tb-table] {
     border-collapse: collapse !important;
   }
-  .table-bordered {
+  [tb-table~='bordered'] {
     th,
     td {
       border: 1px solid #ddd !important;

@@ -3,12 +3,12 @@
 // --------------------------------------------------
 
 
-.pager {
+[tb-pager] {
   padding-left: 0;
   margin: @line-height-computed 0;
   list-style: none;
   text-align: center;
-  &:extend(.clearfix all);
+  &:extend([tb-clearfix] all);
   li {
     display: inline;
     > a,
@@ -27,21 +27,21 @@
     }
   }
 
-  .next {
+  [tb-pager~='next'] {
     > a,
     > span {
       float: right;
     }
   }
 
-  .previous {
+  [tb-pager~='previous'] {
     > a,
     > span {
       float: left;
     }
   }
 
-  .disabled {
+  [tb-pager~='disabled'] {
     > a,
     > a:hover,
     > a:focus,
