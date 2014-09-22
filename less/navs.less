@@ -157,7 +157,8 @@
 // Justified nav links
 // -------------------------
 
-[tb-nav~='justified'] {
+[tb-nav~='justified'],
+.nav-justified {
   width: 100%;
 
   > li {
@@ -187,7 +188,8 @@
 // Move borders to anchors instead of bottom of list
 //
 // Mixin for adding on top the shared `[tb-nav~='justified']` styles for our tabs
-[tb-nav~='tabs'][tb-nav~='justified'] {
+[tb-nav~='tabs'][tb-nav~='justified'],
+.nav-tabs-justified {
   border-bottom: 0;
 
   > li > a {
