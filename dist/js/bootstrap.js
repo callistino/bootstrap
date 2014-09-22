@@ -2038,8 +2038,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     this.options = $.extend({}, Affix.DEFAULTS, options)
 
     this.$target = $(this.options.target)
-      .on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this))
-      .on('click.bs.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this))
+      .on('scroll.bs[tb-affix].data-api', $.proxy(this.checkPosition, this))
+      .on('click.bs[tb-affix].data-api',  $.proxy(this.checkPositionWithEventLoop, this))
 
     this.$element     = $(element)
     this.affixed      =
@@ -2082,7 +2082,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
 
   Affix.prototype.getPinnedOffset = function () {
     if (this.pinnedOffset) return this.pinnedOffset
-    this.$element.removeClass(Affix.RESET).addClass('affix')
+    //this.$element.removeClass(Affix.RESET).addClass('affix')
+    this.$element.attr('[tb-affix]', '')
     var scrollTop = this.$target.scrollTop()
     var position  = this.$element.offset()
     return (this.pinnedOffset = position.top - scrollTop)
@@ -2111,7 +2112,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       if (this.unpin != null) this.$element.css('top', '')
 
       var affixType = 'affix' + (affix ? '-' + affix : '')
-      var e         = $.Event(affixType + '.bs.affix')
+      var e         = $.Event(affixType + '.bs[tb-affix]')
 
       this.$element.trigger(e)
 
@@ -2121,9 +2122,10 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       this.unpin = affix == 'bottom' ? this.getPinnedOffset() : null
 
       this.$element
-        .removeClass(Affix.RESET)
-        .addClass(affixType)
-        .trigger(affixType.replace('affix', 'affixed') + '.bs.affix')
+        //.removeClass(Affix.RESET)
+        //.addClass(affixType)
+        .attr()
+        .trigger(affixType.replace('affix', 'affixed') + '.bs[tb-affix]')
     }
 
     if (affix == 'bottom') {
@@ -2140,10 +2142,10 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
   function Plugin(option) {
     return this.each(function () {
       var $this   = $(this)
-      var data    = $this.data('bs.affix')
+      var data    = $this.data('bs[tb-affix]')
       var options = typeof option == 'object' && option
 
-      if (!data) $this.data('bs.affix', (data = new Affix(this, options)))
+      if (!data) $this.data('bs[tb-affix]', (data = new Affix(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
